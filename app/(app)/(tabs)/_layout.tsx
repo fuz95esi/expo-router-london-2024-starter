@@ -34,6 +34,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="visit"
+        options={{
+          title: "Visit",
+          tabBarActiveTintColor: customColors.tint,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon type="MaterialIcons" name="goat" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
