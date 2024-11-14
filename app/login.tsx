@@ -8,12 +8,15 @@ import {
 } from "react-native";
 import { useAuth } from "@/data/hooks/useAuth";
 import { Button } from "@/components/Button";
+import { useRouter } from "expo-router";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { login } = useAuth();
+
+  const router = useRouter();
 
   return (
     <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
@@ -33,6 +36,7 @@ export default function LoginScreen() {
         <Button
           onPress={async () => {
             await login(email, password);
+            router.replace("/(app)"); //todo fix
           }}
           label="Log in"
         />
