@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import React from "react";
 import colors from "@/constants/colors";
+import { Platform } from "react-native";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -27,6 +28,15 @@ export default function Layout() {
       <Stack.Screen
         name="works/[workId]"
         options={{
+          ...Platform.select({
+            web: {
+              presentation: "transparentModal",
+              animation: "fade",
+            },
+            default: {
+              presentation: "modal",
+            },
+          }),
           headerShown: false,
         }}
       />
