@@ -7,9 +7,11 @@ import { TabBarIcon } from "@/components/TabBarIcon";
 export default function TabLayout() {
   return (
     <Tabs
-      sceneContainerStyle={{ backgroundColor: colors.white }}
       screenOptions={{
         headerShown: false,
+        sceneStyle: {
+          backgroundColor: colors.white,
+        },
       }}
     >
       <Tabs.Screen
